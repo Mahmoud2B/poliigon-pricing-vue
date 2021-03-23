@@ -31,7 +31,6 @@ export default {
 
 <style lang="scss" scroped>
 .anual-monthly-switch-container {
-  padding-top: 30px;
   .col {
     flex-grow: 0;
     padding: 0 10px;

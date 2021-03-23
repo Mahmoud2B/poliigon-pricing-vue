@@ -5,10 +5,16 @@
       Annual plans get 25% off, all credits up front and 24 month credit expiry.
     </p>
     <v-container class="mt-12">
-      <v-row>
+      <v-row d-flex align-stretch>
         <PricingCard v-for="card in cards" v-bind:key="card.id" :card="card" />
       </v-row>
     </v-container>
+    <div class="d-flex align-center justify-center comparison-scroll">
+      <span class="comparison-scroll-click-area">
+        <span class="mr-5 comparison-scroll-text">See detailed plan comparison</span>
+        <v-icon color="primary">fas fa-chevron-down</v-icon>
+      </span>
+    </div>
   </div>
 </template>
 <script>
@@ -34,17 +40,20 @@ export default {
           monthlyPrice: "13.50",
           yearlyPrice: "13.50",
           buttonType: "current", //? "current,getStarted,change"
-          rank: 0, //? hobby->professional->team ((->>>>)) 0->1->2->...
+          whatsIncludedText: "What's Included",
           included: [
             {
+              id: "included 1",
               title: "1 User",
               desc: "bla bla bla",
             },
             {
+              id: "included 2",
               title: "Non-Commercial Lisence",
               desc: "bla bla bla",
             },
             {
+              id: "included 3",
               title: "Unlimited Re-Downloads",
               desc: "bla bla bla",
             },
@@ -60,9 +69,10 @@ export default {
           monthlyPrice: "27.00",
           yearlyPrice: "27.00",
           buttonType: "change", //? "current,getStarted,change"
-          rank: 1, //? hobby->professional->team ((->>>>)) 0->1->2->...
+          whatsIncludedText: "Everything in Hobby plus:",
           included: [
             {
+              id: "included 1",
               title: "Commercial license",
               desc: "bla bla bla",
             },
@@ -78,13 +88,15 @@ export default {
           monthlyPrice: "147.00",
           yearlyPrice: "147.00",
           buttonType: "change", //? "current,getStarted,change"
-          rank: 2, //? hobby->professional->team ((->>>>)) 0->1->2->...
+          whatsIncludedText: "Everything in Professional plus:",
           included: [
             {
+              id: "included 1",
               title: "10 User",
               desc: "bla bla bla",
             },
             {
+              id: "included 2",
               title: "Team commercial license",
               desc: "bla bla bla",
             },
@@ -99,12 +111,25 @@ export default {
 <style lang="scss">
 .cards-container {
   background-color: $grey_background;
-  // TODO remove this!
-  min-height: 1000px;
+  padding-top: 30px;
   .annual-plans-off-percentage-text {
     text-align: center;
     font-size: 18px;
     margin-top: 10px;
+  }
+  .comparison-scroll {
+    text-align: center;
+    height: 150px;
+    .comparison-scroll-click-area{
+      cursor: pointer;
+    }
+    .v-icon {
+      -webkit-text-stroke-width: 1.4px;
+      -webkit-text-stroke-color: $grey_background;
+    }
+    .comparison-scroll-text{
+      font-size: 20px;
+    }
   }
 }
 </style>

@@ -1,10 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
+    <v-app-bar app color="primary" dark>
       <div class="d-flex align-center">
         <v-img
           alt="Vuetify Logo"
@@ -38,33 +34,57 @@
     </v-app-bar>
 
     <v-main>
-      <TextHeading text="Make better renders, faster"/>
-      <Tabs :tabs="tabs"/>
-      <CardsContainer/>
+      <TextHeading text="Make better renders, faster" />
+      <Tabs :tabs="tabs" />
+      <CardsContainer />
+      <AssetCostContainer />
+      <hr class="separator" />
+      <TextHeading text="Works in any 3D Software" />
+      <SoftwareContainer />
+      <EnterpriseContainer />
+      <BrandsContainer />
+      <TextHeading text="Plan comparison" />
+      <PlanComparisonContainer />
+      <FAQContainer />
     </v-main>
   </v-app>
 </template>
 
 <script>
-import TextHeading from './components/text_heading';
-import Tabs from './components/tabs';
-import CardsContainer from './components/cards_container';
+import TextHeading from "./components/text_heading";
+import Tabs from "./components/tabs";
+import CardsContainer from "./components/cards_container";
+import AssetCostContainer from "./components/asset-cost-container";
+import SoftwareContainer from "./components/software-container";
+import EnterpriseContainer from "./components/enterprise-container";
+import BrandsContainer from "./components/brands-container";
+import PlanComparisonContainer from "./components/plan-comparison-container";
+import FAQContainer from "./components/faq-container";
 
 export default {
-  name: 'App',
+  name: "App",
 
   components: {
     TextHeading,
     Tabs,
     CardsContainer,
+    AssetCostContainer,
+    SoftwareContainer,
+    EnterpriseContainer,
+    BrandsContainer,
+    PlanComparisonContainer,
+    FAQContainer,
   },
 
   data: () => ({
-    tabs:[{
-      text:"Subscriptions",
-    },{
-      text:"Credit Packs",
-    },]
+    tabs: [
+      {
+        text: "Subscriptions",
+      },
+      {
+        text: "Credit Packs",
+      },
+    ],
   }),
 };
 </script>
